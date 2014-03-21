@@ -1,0 +1,13 @@
+<h1>All Cats</h1>
+
+<ul>
+  <% @cats.each do |cat| %>
+    <li>
+      <a href="/cats/<%=cat.id%>"><%=cat.name%></a>
+      <form "/cats/<%=cat.id%>" method="post">
+        <input type="hidden" value="delete"/>
+        <input type="submit" value="Delete"/>
+      </form>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,14 @@
+<form action="/cats/<%=@cat.id%>" method="post">
+  <!-- Because we aim to PUT to /cat/:id, specify the params _method as PUT -->
+  <input type="hidden" name="_method" value="put" />
+
+  <!-- Option #1 -->
+  <input type="text" value="<%= @cat.name %>" name="title"/>
+  <input type="text" value="<%= @cat.favorite_food %>" name="body"/>
+
+  <!-- Option #2 -->
+  <input type="text" value="<%= @cat.name %>" name="cat[name]"/>
+  <input type="text" value="<%= @cat.favorite_food %>" name="cat[favorite_food]"/>
+
+  <input type="submit" value="Update"/>
+</form>
